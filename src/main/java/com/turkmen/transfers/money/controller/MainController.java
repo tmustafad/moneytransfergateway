@@ -9,14 +9,14 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import org.glassfish.jersey.spi.ResponseExecutorsProvider;
-
-import com.sun.research.ws.wadl.HTTPMethods;
+import com.turkmen.transfers.money.exception.MoneyTransferGatewayException;
 import com.turkmen.transfers.money.model.Account;
 import com.turkmen.transfers.money.model.Customer;
 import com.turkmen.transfers.money.service.AccountService;
@@ -66,7 +66,17 @@ public class MainController {
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response createCustomer(Customer customer) {
 		this.customerService.saveCustomer(customer);
-		return Response.status(201).type("application/json").entity("success").build();
+		return Response.status(200).type("application/json").entity("success").build();
+	}
+	
+	
+	@PUT
+	@Path("/transferMoney/{fromId}/{toId}/{balance}")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response transferMoney(@PathParam("fromId") Integer fromId,@PathParam("toId") Integer toId,@PathParam("balance") Double balance) throws MoneyTransferGatewayException {
+		accountService.transferTo(fromId, toId, balance);
+		return Response.status(200).type("application/json").entity("success").build();
 	}
 	
 	@DELETE

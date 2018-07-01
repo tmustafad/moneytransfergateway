@@ -33,6 +33,7 @@ public abstract class AbstractDao<K extends Serializable, T> {
 	}
 
 	private void beginTransaction() {
+		if(!this.entityManager.getTransaction().isActive())
 		this.entityManager.getTransaction().begin();
 	}
 
@@ -46,21 +47,21 @@ public abstract class AbstractDao<K extends Serializable, T> {
 	}
 
 	public void persist(T entity) {
-
+		this.beginTransaction();
 		this.entityManager.persist(entity);
 		this.commitTransaction();
 
 	}
 
 	public void merge(T entity) {
-
+		this.beginTransaction();
 		this.entityManager.merge(entity);
 		this.commitTransaction();
 
 	}
 
 	public void delete(T entity) {
-
+		this.beginTransaction();
 		this.entityManager.remove(entity);
 		this.commitTransaction();
 

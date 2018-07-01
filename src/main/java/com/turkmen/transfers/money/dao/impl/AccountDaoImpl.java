@@ -33,6 +33,11 @@ public class AccountDaoImpl extends AbstractDao<Integer, Account> implements Acc
 		
 	}
 
+	public void updateAccount(Account account) {
+		merge(account);
+		
+	}
+
 	
 	
 }

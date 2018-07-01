@@ -3,7 +3,6 @@
  */
 package com.turkmen.transfers.money.service.impl;
 
-import java.math.BigDecimal;
 import java.util.List;
 
 import com.turkmen.transfers.money.dao.AccountDao;
@@ -11,6 +10,7 @@ import com.turkmen.transfers.money.dao.impl.AccountDaoImpl;
 import com.turkmen.transfers.money.exception.MoneyTransferGatewayException;
 import com.turkmen.transfers.money.model.Account;
 import com.turkmen.transfers.money.service.AccountService;
+import com.turkmen.transfers.money.util.MoneyTransferGatewayUtils;
 
 /**
  * @author TTTDEMIRCI
@@ -34,8 +34,11 @@ public class AccountServiceImpl implements AccountService {
 	}
 
 	public void withdraw(Account account, Double amount) throws MoneyTransferGatewayException {
-		if (account.getBalance() > amount)
+		if (account.getBalance() > amount) {
 			account.setBalance(account.getBalance() - amount);
+			accountDao.updateAccount(account);
+		}
+			
 
 		else
 			throw new MoneyTransferGatewayException("The account does not have sufficient balance");
@@ -45,12 +48,16 @@ public class AccountServiceImpl implements AccountService {
 	public void deposit(Account account, Double amount) throws MoneyTransferGatewayException {
 
 		account.setBalance(account.getBalance() + amount);
+		accountDao.updateAccount(account);
 	}
 
 	public void transferTo(Integer fromAccountId, Integer toAccountId, Double balance)
 			throws MoneyTransferGatewayException {
+		
 		Account from = accountDao.findById(fromAccountId);
 		Account to = accountDao.findById(toAccountId);
+		
+		Double transactionFee=MoneyTransferGatewayUtils.TRANFER_TRANSACTION_FEE;
 
 		if (from == null || to == null)
 			throw new MoneyTransferGatewayException("One of the accounts does not exist");
@@ -59,8 +66,8 @@ public class AccountServiceImpl implements AccountService {
 			throw new MoneyTransferGatewayException(
 					"The account types must be the same in order to have a successful transfer between accounts");
 		
-		if(from.getBalance()>balance) {
-			withdraw(from, balance);
+		if(from.getBalance() > (balance+transactionFee)) {
+			withdraw(from, (balance+transactionFee));
 			deposit(to, balance);
 		}
 		else

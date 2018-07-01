@@ -20,4 +20,6 @@ public interface AccountDao {
 	List<Account> getAllAccounts();
 	
 	void deleteAccount(Account account);
+	
+	void updateAccount(Account account);
 }
