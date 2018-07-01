@@ -70,6 +70,27 @@ public class MainController {
 	}
 	
 	
+	
+	@PUT
+	@Path("/deposit/{id}/{balance}")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response deposit(@PathParam("id") Integer id,@PathParam("balance") Double balance) throws MoneyTransferGatewayException {
+		accountService.deposit(accountService.findById(id), balance);
+		return Response.status(200).type("application/json").entity("success").build();
+	}
+	
+	
+	@PUT
+	@Path("/withdraw/{id}/{balance}")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response withdraw(@PathParam("id") Integer id,@PathParam("balance") Double balance) throws MoneyTransferGatewayException {
+		accountService.withdraw(accountService.findById(id), balance);
+		return Response.status(200).type("application/json").entity("success").build();
+	}
+	
+	
 	@PUT
 	@Path("/transferMoney/{fromId}/{toId}/{balance}")
 	@Produces(MediaType.APPLICATION_JSON)
