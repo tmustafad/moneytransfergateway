@@ -50,6 +50,24 @@ public class MainController {
 
 		return accountService.getAllAccounts();
 	}
+	
+	
+	@GET
+	@Path("/getAccountById/{id}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Account getAccountById(@PathParam("id") Integer id) {
+
+		return accountService.findById(id);
+	}
+	
+	
+	@GET
+	@Path("/getCustomerById/{id}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Customer getCustomerById(@PathParam("id") Integer id) {
+
+		return customerService.findById(id);
+	}
 
 	@POST
 	@Path("/createAccount")
