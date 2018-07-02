@@ -1,7 +1,7 @@
 
 #  moneytransfergateway-Instructions
 The Rest api is developed with **JAX-RS** and its implementation **JERSEY**. A standalone **HTTPSERVER** is started via main method and all the endpoints start to serve via this http server.
-Core JPA and hibernate is used for managing entities,and interacting with db.
+Core JPA and hibernate are used for managing entities,and interacting with db.
 
 A custom Exception named **MoneyTransferGatewayException** is created for covering business exceptions raised from service layer.
 
