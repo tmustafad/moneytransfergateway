@@ -27,15 +27,17 @@ public class StartMoneyTransferApp {
 		return server;
 	}
 
-	public static void loadData() {
+	public static void loadData(String showHsqlViewer) {
 		MoneyTransferGatewayUtils.loadSampleData();
+		
+		if(showHsqlViewer.equalsIgnoreCase("yes"))
 		DatabaseManagerSwing.main(
 				new String[] { "--url", "jdbc:hsqldb:mem:moneyTransferGateway", "--user", "sa", "--password", "" });
 	}
 
 	public static void main(String[] args) {
 
-		loadData();
+		loadData(args[0]);
 
 		startServer();
 

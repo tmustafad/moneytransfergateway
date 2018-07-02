@@ -104,6 +104,9 @@
         </executions>
         <configuration>
           <mainClass>com.turkmen.transfers.money.StartMoneyTransferApp</mainClass>
+           <arguments>
+             <argument>${showHsqlViewer}</argument>
+          </arguments>
         </configuration>
       </plugin>
     </plugins>
