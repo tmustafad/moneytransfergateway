@@ -21,7 +21,7 @@ While starting the app, an argument is being passed to open the hsqldb viewer or
 | GET           | http://localhost:7777/transferGateway/getAllCustomers                   |get all Customers
 | GET           | http://localhost:7777/transferGateway/getAllAccounts                    |get all Accounts     
 | GET           | http://localhost:7777/transferGateway/getAccountById/{id}               |get account with the given id
-| GET           | http://localhost:7777/transferGateway/getCustomerById/1                 |get customer with the given id     
+| GET           | http://localhost:7777/transferGateway/getCustomerById/{id}              |get customer with the given id     
 | POST          | http://localhost:7777/transferGateway/createAccount                     |create a new Account
 | POST          | http://localhost:7777/transferGateway/createCustomer                    |create a new Customer
 | DELETE        | http://localhost:7777/transferGateway/deleteCustomer                    |delete customer
