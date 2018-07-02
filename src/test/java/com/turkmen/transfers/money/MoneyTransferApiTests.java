@@ -44,7 +44,7 @@ public class MoneyTransferApiTests {
 
 	@BeforeClass
 	public static void runFirstbeforeAlltests() {
-		StartMoneyTransferApp.loadData("yes");
+		StartMoneyTransferApp.loadData("no");//If you want to see the hsqldb viewer ,set this argument to "yes"
 		StartMoneyTransferApp.startServer();
 	}
 

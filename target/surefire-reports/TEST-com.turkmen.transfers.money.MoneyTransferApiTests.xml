@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="8" failures="0" name="com.turkmen.transfers.money.MoneyTransferApiTests" time="3.072" errors="0" skipped="0">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_151\jre\bin"/>
+    <property name="java.vm.version" value="25.151-b12"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="maven.multiModuleProjectDirectory" value="D:\SpringBootWorkspace\moneytransfergateway"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=";"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.script" value=""/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="test" value="MoneyTransferApiTests"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="D:\SpringBootWorkspace\moneytransfergateway"/>
+    <property name="java.runtime.version" value="1.8.0_151-b12"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_151\jre\lib\endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="C:\Users\TTTDEM~1\AppData\Local\Temp\"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="classworlds.conf" value="C:\Users\tttdemirci\Downloads\apache-maven-3.5.3-bin\apache-maven-3.5.3\bin\..\bin\m2.conf"/>
+    <property name="sun.jnu.encoding" value="Cp1254"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_151\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Docker\Docker\Resources\bin;C:\Program Files\Java\jdk1.8.0_151\bin;D:\Dev\IBM\RationalSDLC\common;C:\ProgramData\Oracle\Java\javapath;c:\oracle\oc121\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;D:\Dev\VanDyke Software\Clients\;D:\Dev\Git\cmd;D:\Dev\TortoiseSVN\bin;D:\Dev\IBM\RationalSDLC\ClearCase\bin;C:\Program Files (x86)\IBM\gsk8\lib;C:\Program Files (x86)\IBM\gsk8\bin;D:\Dev\IBM\RationalSDLC\ClearCase\RemoteClient\cteapis;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\ORA11G\bin;C:\Windows\SysWOW64\;C:\Windows\SysWOW64\Wbem;C:\Windows\SysWOW64\WindowsPowerShell\v1.0;C:\Program Files\VanDyke Software\Clients\;C:\Program Files (x86)\Sennheiser\SoftphoneSDK\;C:\Users\tttdemirci\Downloads\apache-maven-3.5.3-bin\apache-maven-3.5.3\bin;C:\Users\tttdemirci\AppData\Local\Continuum\anaconda2;C:\Users\tttdemirci\AppData\Local\Continuum\anaconda2\Library\mingw-w64\bin;C:\Users\tttdemirci\AppData\Local\Continuum\anaconda2\Library\usr\bin;C:\Users\tttdemirci\AppData\Local\Continuum\anaconda2\Library\bin;C:\Users\tttdemirci\AppData\Local\Continuum\anaconda2\Scripts;C:\Users\tttdemirci\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;D:\Dev\UltraEdit\;C:\Users\tttdemirci\AppData\Local\GitHubDesktop\bin;."/>
+    <property name="maven.conf" value="C:\Users\tttdemirci\Downloads\apache-maven-3.5.3-bin\apache-maven-3.5.3\bin\../conf"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="10.0"/>
+    <property name="library.jansi.path" value="C:\Users\tttdemirci\Downloads\apache-maven-3.5.3-bin\apache-maven-3.5.3\bin\..\lib\jansi-native"/>
+    <property name="user.home" value="C:\Users\tttdemirci"/>
+    <property name="user.timezone" value="Asia/Istanbul"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="Cp1254"/>
+    <property name="user.name" value="TTTDEMIRCI"/>
+    <property name="java.class.path" value="C:\Users\tttdemirci\Downloads\apache-maven-3.5.3-bin\apache-maven-3.5.3\bin\..\boot\plexus-classworlds-2.5.2.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_151\jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dtest=MoneyTransferApiTests test"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_151"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_151\jre\lib\ext;C:\Windows\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_151\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_151\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_151\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_151\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_151\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_151\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_151\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_151\jre\classes"/>
+    <property name="sun.stderr.encoding" value="cp857"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="C:\Users\tttdemirci\Downloads\apache-maven-3.5.3-bin\apache-maven-3.5.3\bin\.."/>
+    <property name="file.separator" value="\"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.stdout.encoding" value="cp857"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+  </properties>
+  <testcase classname="com.turkmen.transfers.money.MoneyTransferApiTests" name="testGetAccountsResponseSize" time="1.386"/>
+  <testcase classname="com.turkmen.transfers.money.MoneyTransferApiTests" name="testGetAccountsStatusCode" time="0.338"/>
+  <testcase classname="com.turkmen.transfers.money.MoneyTransferApiTests" name="testCreateAccount" time="0.226"/>
+  <testcase classname="com.turkmen.transfers.money.MoneyTransferApiTests" name="testGetCustomersResponseSize" time="0.192"/>
+  <testcase classname="com.turkmen.transfers.money.MoneyTransferApiTests" name="testGetAccountsReturnMediaType" time="0.18"/>
+  <testcase classname="com.turkmen.transfers.money.MoneyTransferApiTests" name="testCreateCustomer" time="0.205"/>
+  <testcase classname="com.turkmen.transfers.money.MoneyTransferApiTests" name="testGetCustomersStatusCode" time="0.255"/>
+  <testcase classname="com.turkmen.transfers.money.MoneyTransferApiTests" name="testGetCustomersReturnMediaType" time="0.29"/>
+</testsuite>
