@@ -34,7 +34,7 @@ public class AccountServiceImpl implements AccountService {
 	}
 
 	public void withdraw(Account account, Double amount) throws MoneyTransferGatewayException {
-		if (account.getBalance() > amount) {
+		if (account.getBalance() >= amount) {
 			account.setBalance(account.getBalance() - amount);
 			accountDao.updateAccount(account);
 		}
@@ -66,7 +66,7 @@ public class AccountServiceImpl implements AccountService {
 			throw new MoneyTransferGatewayException(
 					"The account types must be the same in order to have a successful transfer between accounts");
 		
-		if(from.getBalance() > (balance+transactionFee)) {
+		if(from.getBalance() >= (balance+transactionFee)) {
 			withdraw(from, (balance+transactionFee));
 			deposit(to, balance);
 		}

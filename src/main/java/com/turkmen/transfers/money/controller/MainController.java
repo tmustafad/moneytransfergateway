@@ -57,7 +57,7 @@ public class MainController {
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response createAccount(Account account) {
 		this.accountService.createAccount(account);
-		return Response.status(200).type("application/json").entity("success").build();
+		return Response.status(200).type("text/plain").entity("success").build();
 	}
 
 	@POST
@@ -66,7 +66,7 @@ public class MainController {
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response createCustomer(Customer customer) {
 		this.customerService.saveCustomer(customer);
-		return Response.status(200).type("application/json").entity("success").build();
+		return Response.status(200).type("text/plain").entity("success").build();
 	}
 	
 	
@@ -77,7 +77,7 @@ public class MainController {
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response deposit(@PathParam("id") Integer id,@PathParam("balance") Double balance) throws MoneyTransferGatewayException {
 		accountService.deposit(accountService.findById(id), balance);
-		return Response.status(200).type("application/json").entity("success").build();
+		return Response.status(200).type("text/plain").entity("success").build();
 	}
 	
 	
@@ -87,7 +87,7 @@ public class MainController {
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response withdraw(@PathParam("id") Integer id,@PathParam("balance") Double balance) throws MoneyTransferGatewayException {
 		accountService.withdraw(accountService.findById(id), balance);
-		return Response.status(200).type("application/json").entity("success").build();
+		return Response.status(200).type("text/plain").entity("success").build();
 	}
 	
 	
@@ -97,7 +97,7 @@ public class MainController {
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response transferMoney(@PathParam("fromId") Integer fromId,@PathParam("toId") Integer toId,@PathParam("balance") Double balance) throws MoneyTransferGatewayException {
 		accountService.transferTo(fromId, toId, balance);
-		return Response.status(200).type("application/json").entity("success").build();
+		return Response.status(200).type("text/plain").entity("success").build();
 	}
 	
 	@DELETE
@@ -106,7 +106,7 @@ public class MainController {
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response deleteCustomer(Customer customer) {
 		this.customerService.deleteCustomer(customerService.findById(customer.getId()));
-		return Response.status(200).type("application/json").entity("success").build();
+		return Response.status(200).type("text/plain").entity("success").build();
 	}
 	
 	
@@ -116,7 +116,7 @@ public class MainController {
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response deleteAccount(Account account) {
 		this.accountService.deleteAccount(accountService.findById(account.getId()));;
-		return Response.status(200).type("application/json").entity("success").build();
+		return Response.status(200).type("text/plain").entity("success").build();
 	}
 
 }
