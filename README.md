@@ -12,7 +12,7 @@ You can run the project via **StartMoneyTransferApp** class which is the startin
 
 The **HSQLDB** is used for keeping data. This is an in-memory database, it starts just before the http server starts and I load some test data to test the api. 
 
-While starting the app, an argument is being passed to open the hsqldb viewver or not. If **yes** is passed along with the maven command ,hsqldb viewver starts, if sth other than yes is specified no viewver starts. All data is accessible via rest api also ,you can find the rest api endpoints and sample requests for creating data and transfer,withdraw or deposit money.
+While starting the app, an argument is being passed to open the hsqldb viewer or not. If **yes** is passed along with the maven command ,hsqldb viewer starts, if sth other than yes is specified no viewver starts. All data is accessible via rest api also ,you can find the rest api endpoints and sample requests for creating data and transfer,withdraw or deposit money.
 
 
 ## The Endpoints to reach after running the project
