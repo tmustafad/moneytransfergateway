@@ -1,9 +1,9 @@
 
 #  moneytransfergateway-Instructions
 The Rest api is developed with **JAX-RS** and its implementation **JERSEY**. A standalone **HTTPSERVER** is started via main method and all the endpoints start to serve via this http server.
-Core JPA is used for managing entities,transaction management are handled manually. Because the app is going to work in one jvm,and it is for test purposes ,I did not deal with closing the entity manager etc.
+Core JPA and hibernate is used for managing entities,and interacting with db.
 
-A custom Exception named **MoneyTransferGatewayException** is created for coverint business exceptions raised from service layer.
+A custom Exception named **MoneyTransferGatewayException** is created for covering business exceptions raised from service layer.
 
 ### Installing
 Once you import project into your workspace as exsisting maven project, all you need to do install the maven project and run it.
